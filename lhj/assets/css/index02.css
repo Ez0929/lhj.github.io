@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'NEXON Lv2 Gothic';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F2AE31;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    position: fixed;
+    top: 10px;
+    z-index: 1;
+}
+
+.div1 {
+    font-family: "Black Han Sans", sans-serif;
+    font-style: normal;
+    font-size: 5vw;
+    position: fixed;
+}
+
+.db {
+    position: fixed;
+    top: 11%;
+    font-family: "Black Han Sans", sans-serif;
+    font-style: normal;
+    font-size: 8vw;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.home {
+    position: fixed;
+    right: 20px;
+    font-family: "Black Han Sans";
+    font-style: normal;
+    font-size: 5vw;
+    text-decoration-line: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+.headphone-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.headphone-dynamic-gradient-icon {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    animation: float 3s ease-in-out infinite; 
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);  /* 로고가 떠오르는 높이를 조절 */
+    }
+}
+
+
+.headphone {
+    width: 25vw;
+    height: 25vw;
+    background-color: white;
+    border-radius: 40%;
+    position: relative;
+    margin: 0 20px;
+    box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.wave-group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 35%;
+    height: 15vw;
+}
+
+.wave {
+    width: 2.5vw;
+    height: 10vw;
+    border-radius: 30px;
+    animation: waveAnimation 1.5s infinite cubic-bezier(0.42, 0, 0.58, 1);
+    transform-origin: bottom;
+}
+
+.wave-1 { 
+    background-color: #626AF1; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-2 { 
+    background-color: #626AF1; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-3 { 
+    background-color: #626AF1; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-4 { 
+    background-color: #8D91F2; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-5 { 
+    background-color: #8D91F2; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-6 { 
+    background-color: #8D91F2; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-7 { 
+    background-color: #FFFFFF; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-8 { 
+    background-color: #FFFFFF; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-9 { 
+    background-color: #FFFFFF; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+.wave-10 { 
+    background-color: #FFFFFF; 
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* .wave:nth-child(1) {
+    animation-delay: -1.4s;
+}
+
+.wave:nth-child(2) {
+    animation-delay: -1.3s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: -1.2s;
+}
+
+.wave:nth-child(4) {
+    animation-delay: -1.1s;
+}
+
+.wave:nth-child(5) {
+    animation-delay: -1s;
+}
+
+.wave:nth-child(6) {
+    animation-delay: -0.9s;
+}
+
+.wave:nth-child(7) {
+    animation-delay: -0.8s;
+}
+
+.wave:nth-child(8) {
+    animation-delay: -0.7s;
+}
+
+.wave:nth-child(9) {
+    animation-delay: -0.6s;
+}
+
+.wave:nth-child(10) {
+    animation-delay: -0.5s;
+}
+
+@keyframes waveAnimation {
+    0%, 100% {
+        transform: scaleY(0.2);
+    }
+    50% {
+        transform: scaleY(1);
+    }
+} */
+
+.message-container {
+    width: 70%;
+    max-width: 1200px;
+    height: auto;
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 143px;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+.message {
+    margin: 0;
+    font-size: 4vw;
+    font-family: 'NEXON Lv2 Gothic';
+    word-break: break-all;
+    white-space: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .message-container {
+        width: 80%;
+        padding: 10px;
+    }
+
+    .message {
+        font-size: 5vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .message-container {
+        width: 90%;
+        padding: 5px;
+    }
+
+    .message {
+        font-size: 6vw;
+    }
+}

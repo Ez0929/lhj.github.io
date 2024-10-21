@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #4b4ef9;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 화면 전체 높이를 차지하도록 설정 */
+}
+
+.logo-container {
+    text-align: center; /* 로고를 중앙 정렬 */
+}
+
+.box {
+    max-width: 60%;
+    height: auto; /* 로고 이미지의 크기를 자동 조정 */
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.1); /* 호버 시 크기를 1.1배로 확대 */
+}
+
+
+/* 물결 애니메이션을 정의하는 키프레임 */
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1); /* 초기 상태: 위치 이동 없음, 크기 변화 없음 */
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55); /* 중간 상태: X축으로 -25% 이동, Y축 크기를 0.55로 축소 */
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1); /* 끝 상태: X축으로 -50% 이동, 원래 크기로 복귀 */
+    }
+}
+
+/* 전체 물결 애니메이션을 포함하는 래퍼 */
+.waveWrapper {
+    overflow: hidden; /* 내용이 넘치면 숨김 */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto; /* 중앙에 배치 */
+}
+
+/* 내부 래퍼, 물결을 포함 */
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%; 
+    bottom: -1px; /* 약간의 오프셋으로 물결을 아래로 이동 */
+}
+
+/* 최상단 물결 레이어 */
+.bgTop {
+    z-index: 15; /* 가장 위에 배치 */
+    opacity: 0.5; /* 반투명도 설정 */
+}
+
+/* 중간 물결 레이어 */
+.bgMiddle {
+    z-index: 10; /* 중간 레이어 */
+    opacity: 0.75; /* 반투명도 설정 */
+}
+
+/* 최하단 물결 레이어 */
+.bgBottom {
+    z-index: 5; /* 가장 아래 레이어 */
+}
+
+/* 물결의 기본 스타일 */
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%; /* 넓이를 두 배로 설정하여 애니메이션 효과를 만듦 */
+    height: 100%;
+    background-repeat: repeat no-repeat; /* 배경 이미지를 반복하지 않음 */
+    background-position: 0 bottom; /* 배경 이미지를 아래쪽에 위치 */
+    transform-origin: center bottom; /* 변환 중심을 아래쪽 가운데로 설정 */
+}
+
+/* 최상단 물결의 배경 크기 설정 */
+.waveTop {
+    background-size: 50% 50px; /* 배경 이미지 크기 설정 */
+}
+
+/* 최상단 물결의 애니메이션 설정 */
+.waveAnimation .waveTop {
+    animation: move_wave 3s; /* 3초 동안 애니메이션 */
+    -webkit-animation: move_wave 3s; /* 웹킷 브라우저를 위한 애니메이션 설정 */
+    -webkit-animation-delay: 1s; /* 웹킷 브라우저에서 애니메이션 시작 지연 1초 */
+    animation-delay: 1s; /* 애니메이션 시작 지연 1초 */
+}
+
+/* 중간 물결의 배경 크기 설정 */
+.waveMiddle {
+    background-size: 50% 60px; /* 배경 이미지 크기 설정 */
+}
+
+/* 중간 물결의 애니메이션 설정 */
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite; /* 10초 동안 선형 반복 애니메이션 */
+}
+
+/* 최하단 물결의 배경 크기 설정 */
+.waveBottom {
+    background-size: 50% 50px; /* 배경 이미지 크기 설정 */
+}
+
+/* 최하단 물결의 애니메이션 설정 */
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite; /* 15초 동안 선형 반복 애니메이션 */
+}

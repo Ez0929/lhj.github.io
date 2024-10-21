@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/assets/js/script03.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/SplitText.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script>
+      // Smooth scroll to top
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }
+
+      // 버튼이 일정 스크롤 위치에서만 보이게 설정
+      window.onscroll = function () {
+        const toTopButton = document.getElementById('toTopButton');
+        if (document.documentElement.scrollTop > 300) {
+          gsap.to(toTopButton, { opacity: 1, scale: 1, duration: 0.3 });
+        } else {
+          gsap.to(toTopButton, { opacity: 0, scale: 0.8, duration: 0.3 });
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Header with navigation -->
+    <header
+      class="fixed w-full bg-white/1 text-white z-50 shadow-lg backdrop-blur-lg"
+      style="font-family: 'Pretendard-Regular'; padding: 1rem 2rem"
+    >
+      <div class="max-w-7xl mx-auto">
+        <!-- 헤더를 중앙에 위치시키는 컨테이너 -->
+        <nav class="flex justify-between items-center">
+          <!-- Jun 링크: 호버 시 배경과 텍스트 반전만 적용 -->
+          <a
+            href="main.html"
+            class="rounded-full p-2 hover:bg-white hover:text-black transition"
+          >
+            <img
+              src="./assets/img/hj.svg"
+              alt="JUN Logo"
+              class="w-12 h-12 object-contain"
+            />
+          </a>
+          <!-- 다른 네비게이션 아이템 추가 가능 -->
+        </nav>
+      </div>
+    </header>
+
+    <!-- 프로젝트 섹션 -->
+    <section
+      class="pt-40 pb-20 px-6 bg-black"
+      style="font-family: 'Pretendard-Regular'"
+    >
+      <!-- 헤더의 높이에 맞춘 pt-40 추가 -->
+      <div class="max-w-7xl mx-auto">
+        <!-- 프로젝트 타이틀 -->
+        <h2 class="text-4xl font-bold text-white mb-4">Chack APP</h2>
+
+        <!-- 프로젝트 설명 -->
+        <p class="text-lg font-semibold text-red-500 mb-2">
+          담당역할:
+          <span class="text-lg font-semibold text-white"
+            >UX/UI 디자인, 프론트앤드</span
+          >
+        </p>
+
+        <p class="text-base text-white mb-6">
+          Chack 어플리케이션 UX/UI 디자인을 담당했습니다.<br />
+          서비스에 필요한 모든 화면 디자인에 100% 참여하였습니다.<br />
+          사용자 경험을 최적화하고 핵심 기능을 구현하는것에 주력중입니다.
+        </p>
+
+        <!-- 이미지 섹션 -->
+        <div class="bg-black">
+          <img
+            src="./assets/img/icon.svg"
+            alt="트레저 APP 디자인 이미지"
+            class="w-full h-auto"
+          />
+        </div>
+        <div class="bg-black">
+          <img
+            src="./assets/img/iOS.svg"
+            alt="트레저 APP 디자인 이미지"
+            class="w-full h-auto"
+          />
+        </div>
+        <div class="bg-black">
+          <img
+            src="./assets/img/app.svg"
+            alt="트레저 APP 디자인 이미지"
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 푸터 섹션 -->
+    <footer class="bg-black text-white relative">
+      <div
+        class="max-w-7xl mx-auto flex justify-between items-center py-6"
+        style="font-family: 'Pretendard-Regular'"
+      >
+        <div>
+          <p class="text-sm">&copy; 2024 Chack. All rights reserved.</p>
+        </div>
+      </div>
+
+      <!-- 맨 위로 가기 버튼 -->
+      <button
+        id="toTopButton"
+        onclick="scrollToTop()"
+        class="fixed bottom-4 right-20 bg-red-500 text-white p-4 rounded-full shadow-lg transition-transform transform scale-0 opacity-0"
+        aria-label="Scroll to top"
+      >
+        ⬆️
+      </button>
+    </footer>
+  </body>
+</html>
